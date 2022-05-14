@@ -50,5 +50,23 @@ namespace DemoLibrary.Tests
             // Assert
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void Subtract_SubtractOneValueFromAnother()
+        {
+            double expected = 3;
+            double actual = Calculator.Subtract(9, 6);
+            Assert.Equal(expected, actual);
+        }
+
+        [Theory]
+        [InlineData(5, 5, 25)]
+        [InlineData(2, 2, 4)]
+        [InlineData(7, 7, 41)]
+        public void Multiply_TwoValueMultiplied(double x, double y, double expected)
+        {
+            double actual = Calculator.Multiply(x, y);
+            Assert.Equal(expected, actual);
+        }
     }
 }
